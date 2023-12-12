@@ -1,7 +1,8 @@
-numbers=[0,0,0,0,0,0] #array setup
+numbers=[0,0,0,0,0,0] #array numbers[6]
 
-for i in range(0,6): #number input
+for i in range(0,6): # for i = 0 to 5 do
     numbers[i]=int(input("number?"))
+    # next i
 
 print(numbers) #normal
 
