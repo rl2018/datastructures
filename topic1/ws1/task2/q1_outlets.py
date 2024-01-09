@@ -1,13 +1,8 @@
-outletSales = [4,50]
+import random
 
-Outlet1Sales = [10, 12,15,10]
-Outlet2Sales = [5,8,3,6]
-Outlet3Sales = [10,12,15,10]
- 
-totalSales=[0,0,0,0]
+outletSales=[[],[0*50]]
 
-for i in range(0,4):
-   totalSales[i]= (Outlet1Sales[i]+Outlet2Sales[i]+Outlet3Sales[i])*1000
+for i in range(0,50):
+    outletSales[1][i]=random.randint(1,100)
 
-for j in range(0,4):
-   print("Total for quarter",str(j),totalSales[j])
+print(outletSales)

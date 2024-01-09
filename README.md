@@ -1,1 +1,1 @@
-# datastructures
+# datastructures. comments are pseudocode equivalents
