@@ -1,3 +1,5 @@
+import time
+
 queue=['','','','',''] # initialising empty array
 
 # initialising main variables
@@ -12,37 +14,60 @@ def isFull():
     else:
         return False # if not full
     
+def isEmpty():
+    global size
+    if size==0:
+        return True
+    else:
+        return False
+    
 def enQueue(tname):
     global rear,queue,size,front
-    if rear>4: # prevent rear being set over 4 out of index
-        rear=0
-    queue[rear+1]=tname # enqueue the name in the next spot in the queue
-    rear+=1
-    size+=1
-    print("Front=",front,"Rear=",rear,"Size=",size) # monitoring
-    print(queue)
+    check=isFull()
+    if check is False:
+        if rear==4: # prevent rear being set over 4 out of index
+            rear=-1
+        queue[rear+1]=tname # enqueue the name in the next spot in the queue
+        rear+=1
+        size+=1
+        print("\nFront=",front,"Rear=",rear,"Size=",size) # monitoring
+        print(queue)
+        time.sleep(1)
+    else:
+        print("\nQueue is full, no more items can be enqueued")
 
 def deQueue():
     global front,rear,queue,size
-    queue[front]='' # dequeue the first item in the queue
-    size-=1
-    if front>4: # prevent front being set over 4 out of index
-        front=0
-    else:
+    check=isEmpty()
+    if check is False:
+        if front==5: # prevent front being set over 4 out of index
+            front=0
+        queue[front]='' # dequeue the first item in the queue
         front+=1
-    rear-=1
-    print("Front=",front,"Rear=",rear,"Size=",size) # monitoring
-    print(queue)
+        size-=1
+
+        print("\nFront=",front,"Rear=",rear,"Size=",size) # monitoring
+        print(queue)
+        time.sleep(1)
+    else:
+        print("\nQueue is empty, nothing to dequeue")
 
 enQueue("A")
 enQueue("B")
 enQueue("C")
 enQueue("D")
-print(isFull())
 enQueue("E")
 deQueue()
 deQueue()
 enQueue("F")
+enQueue("G")
+enQueue("H")
+deQueue()
+deQueue()
+deQueue()
+deQueue()
+deQueue()
+deQueue()
 
 """cont=True
 while cont is True:
