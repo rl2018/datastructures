@@ -31,7 +31,13 @@ def enQueue(tname):
         rear+=1
         size+=1
         print("\nFront=",front,"Rear=",rear,"Size=",size) # monitoring
-        print(queue)
+        tablegen="""
+              *********************
+              * 0 * 1 * 2 * 3 * 4 *
+              *********************
+              * {0} * {1} * {2} * {3} * {4} *
+              *********************"""
+        print (tablegen.format(queue[0], queue[1],queue[2],queue[3],queue[4]))
         time.sleep(1)
     else:
         print("\nQueue is full, no more items can be enqueued")
@@ -42,12 +48,18 @@ def deQueue():
     if check is False:
         if front==5: # prevent front being set over 4 out of index
             front=0
-        queue[front]='' # dequeue the first item in the queue
+        # queue[front]='' # dequeue the first item in the queue
         front+=1
         size-=1
 
         print("\nFront=",front,"Rear=",rear,"Size=",size) # monitoring
-        print(queue)
+        tablegen="""
+              *********************
+              * 0 * 1 * 2 * 3 * 4 *
+              *********************
+              * {0} * {1} * {2} * {3} * {4} *
+              *********************"""
+        print(tablegen.format(queue[0], queue[1],queue[2],queue[3],queue[4]))
         time.sleep(1)
     else:
         print("\nQueue is empty, nothing to dequeue")
