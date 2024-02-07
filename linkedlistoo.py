@@ -27,19 +27,6 @@ class LinkedList():
             print(current.get_data())
             current=current.get_next()
 
-    def insert_at_front(my_list, data):
-        # Create a new node
-        new_node = NodeRecord()
-        new_node.data = data
-
-        # Check if the head node exists
-        if my_list.head is None:
-            my_list.head = new_node
-        else:
-            # Update the pointers so the new node is the head
-            new_node.next = my_list.head           
-            my_list.head = new_node
-
     def insert_at_front(self, data):
         # Create a new node
         new_node = Node(data)
@@ -129,4 +116,5 @@ print(node1.get_next())
 
 node1.set_next(node2)
 print(node1.get_next())
+
 
