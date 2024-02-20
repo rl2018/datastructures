@@ -91,8 +91,9 @@ def delete():
                 if(list[(list[pointer][1])][0])==name: # checks if the next node's data is the same as the name that is being deleted
                     print(pointer)
                     list[pointer][1]=list[(list[pointer][1])][1] # sets the nextpointer for the current node to the nextpointer of the node being deleted
-                    list[list[pointer][1]][0]=None
-                    list[list[pointer][1]][1]=None
+                    print(list[list[pointer][1]][0])
+                    # list[list[pointer][1]][0]=None
+                    # list[list[pointer][1]][1]=None
                     deleted=True
                     traverse()
                 else:
